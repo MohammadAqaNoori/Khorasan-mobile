@@ -1,8 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useLanguage } from '../context/LanguageContext';
 
 const ContactPage = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
       <Header />
@@ -13,10 +16,10 @@ const ContactPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">
-                با ما در <span className="text-primary">تماس</span> شوید
+                {t('contactUs')}
               </h1>
               <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                تیم پشتیبانی خراسان موبایل برای پاسخگویی به سوالات شما در مورد خرید، گارانتی و خدمات پس از فروش آماده است.
+                {t('contactDesc')}
               </p>
             </div>
           </div>
@@ -36,15 +39,15 @@ const ContactPage = () => {
                     <span className="material-icons text-white">chat</span>
                   </div>
                   <div>
-                    <h3 className="font-bold text-green-700 dark:text-green-400">چت مستقیم واتس‌اپ</h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">پاسخگویی سریع کمتر از ۳۰ دقیقه</p>
+                    <h3 className="font-bold text-green-700 dark:text-green-400">{t('whatsappChat')}</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">{t('quickResponse')}</p>
                   </div>
                 </div>
                 <a
                   href="https://wa.me/93700000000"
                   className="block w-full bg-green-500 text-white text-center py-3 rounded-lg font-bold hover:bg-green-600 transition-colors"
                 >
-                  ارسال پیام به 93700000000+
+                  {t('sendMessage')} 93700000000+
                 </a>
               </div>
 
@@ -55,7 +58,7 @@ const ContactPage = () => {
                     <span className="material-icons text-primary">location_on</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white">آدرس مرکزی</h4>
+                    <h4 className="font-bold text-slate-900 dark:text-white">{t('mainAddress')}</h4>
                     <p className="text-slate-600 dark:text-slate-400 text-sm mt-1 leading-relaxed">
                       کابل، شهرنو، چهارراهی انصاری، مرکز تجارتی خراسان، طبقه دوم، واحد ۱۲
                     </p>
@@ -66,7 +69,7 @@ const ContactPage = () => {
                     <span className="material-icons text-primary">mail</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white">ایمیل پشتیبانی</h4>
+                    <h4 className="font-bold text-slate-900 dark:text-white">{t('supportEmail')}</h4>
                     <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">info@khorasanmobile.af</p>
                     <p className="text-slate-600 dark:text-slate-400 text-sm">support@khorasanmobile.af</p>
                   </div>
@@ -76,7 +79,7 @@ const ContactPage = () => {
                     <span className="material-icons text-primary">schedule</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white">ساعات کاری</h4>
+                    <h4 className="font-bold text-slate-900 dark:text-white">{t('workingHours')}</h4>
                     <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">
                       شنبه تا پنجشنبه: ۸:۰۰ صبح الی ۶:۰۰ شام
                     </p>
@@ -87,7 +90,7 @@ const ContactPage = () => {
 
               {/* Trust Badges */}
               <div className="bg-primary p-6 rounded-xl text-white">
-                <h4 className="font-bold mb-4">چرا به ما اعتماد کنید؟</h4>
+                <h4 className="font-bold mb-4">{t('whyTrustUs')}</h4>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-2 text-sm">
                     <span className="material-icons text-sm">verified</span>
@@ -109,7 +112,7 @@ const ContactPage = () => {
             <div className="lg:col-span-8 order-1 lg:order-2">
               <div className="bg-white dark:bg-slate-800/50 rounded-2xl shadow-xl shadow-primary/5 p-8 border border-primary/5">
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">پیام خود را بفرستید</h2>
+                  <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{t('sendYourMessage')}</h2>
                   <p className="text-slate-500 dark:text-slate-400">
                     فارغ از اینکه سوال فنی دارید یا قصد خرید، ما آماده شنیدن نظرات شما هستیم.
                   </p>
@@ -118,7 +121,7 @@ const ContactPage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                        نام و تخلص *
+                        {t('fullName')} *
                       </label>
                       <input
                         className="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
@@ -128,7 +131,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                        شماره تماس (افغانستان) *
+                        {t('phoneNumber')} *
                       </label>
                       <div className="relative">
                         <input
@@ -144,7 +147,7 @@ const ContactPage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                        موضوع پیام
+                        {t('subject')}
                       </label>
                       <select className="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all">
                         <option>استعلام قیمت عمده</option>
@@ -156,7 +159,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                        ایمیل (اختیاری)
+                        {t('email')}
                       </label>
                       <input
                         className="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
@@ -167,7 +170,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
-                      متن پیام *
+                      {t('message')} *
                     </label>
                     <textarea
                       className="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all"
@@ -182,7 +185,7 @@ const ContactPage = () => {
                       type="checkbox"
                     />
                     <label className="text-sm text-slate-600 dark:text-slate-400" htmlFor="privacy">
-                      با ارسال این فرم، شما با <a href="#" className="text-primary hover:underline">قوانین و مقررات</a> سایت موافقت می‌کنید.
+                      {t('agreeTerms')} <a href="#" className="text-primary hover:underline">{t('terms')}</a> {t('agree')}
                     </label>
                   </div>
                   <button
@@ -190,7 +193,7 @@ const ContactPage = () => {
                     type="submit"
                   >
                     <span className="material-icons">send</span>
-                    ارسال درخواست
+                    {t('sendRequest')}
                   </button>
                 </form>
               </div>

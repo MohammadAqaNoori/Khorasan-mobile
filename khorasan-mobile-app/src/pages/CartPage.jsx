@@ -1,8 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useLanguage } from '../context/LanguageContext';
 
 const CartPage = () => {
+  const { t } = useLanguage();
+  
   const cartItems = [
     {
       id: 1,
@@ -29,18 +32,18 @@ const CartPage = () => {
       
       <main className="container mx-auto px-6 py-8">
         <nav className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 mb-8">
-          <a href="/" className="hover:text-primary">صفحه اصلی</a>
+          <a href="/" className="hover:text-primary">{t('home')}</a>
           <span className="material-icons text-sm">chevron_left</span>
-          <span className="text-primary font-semibold">سبد خرید شما</span>
+          <span className="text-primary font-semibold">{t('shoppingCart')}</span>
         </nav>
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Product List */}
           <div className="w-full lg:w-2/3 space-y-4">
             <h1 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              سبد خرید
+              {t('shoppingCart')}
               <span className="text-sm font-normal bg-primary/10 text-primary px-3 py-1 rounded-full">
-                (۲ مورد)
+                (۲ {t('cartItems')})
               </span>
             </h1>
 
@@ -56,7 +59,7 @@ const CartPage = () => {
                       <p className="text-sm text-slate-500 mt-1">{item.variant}</p>
                       <span className="inline-flex items-center mt-2 px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-500 ml-1.5"></span>
-                        موجود در انبار کابل
+                        {t('availableKabul')}
                       </span>
                     </div>
                     <button className="text-slate-400 hover:text-red-500 transition-colors">
@@ -90,7 +93,7 @@ const CartPage = () => {
             <div className="pt-4">
               <a href="/category/mobile" className="inline-flex items-center text-primary font-medium hover:underline gap-2">
                 <span className="material-icons text-sm">arrow_forward</span>
-                ادامه خرید و مشاهده محصولات دیگر
+                {t('continueShopping')}
               </a>
             </div>
           </div>
@@ -100,31 +103,31 @@ const CartPage = () => {
             <div className="sticky top-24 space-y-6">
               <div className="bg-white dark:bg-slate-900 p-8 rounded-xl border border-primary/5 shadow-lg">
                 <h2 className="text-xl font-bold mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
-                  خلاصه سفارش
+                  {t('orderSummary')}
                 </h2>
                 <div className="space-y-4">
                   <div className="flex justify-between text-slate-600 dark:text-slate-400">
-                    <span>قیمت محصولات (۲ مورد)</span>
+                    <span>{t('productPrice')} (۲ {t('cartItems')})</span>
                     <span className="font-semibold tracking-wide">۱,۷۹۸ $</span>
                   </div>
                   <div className="flex justify-between text-slate-600 dark:text-slate-400">
-                    <span>تخفیف</span>
+                    <span>{t('discount')}</span>
                     <span className="text-green-600 font-semibold tracking-wide">- ۵۱ $</span>
                   </div>
                   <div className="flex justify-between text-slate-600 dark:text-slate-400">
-                    <span>هزینه ارسال (کابل)</span>
-                    <span className="text-slate-400">رایگان</span>
+                    <span>{t('shippingCost')}</span>
+                    <span className="text-slate-400">{t('free')}</span>
                   </div>
                   <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
-                    <span className="text-lg font-bold">مجموع کل</span>
+                    <span className="text-lg font-bold">{t('total')}</span>
                     <span className="text-2xl font-bold text-primary tracking-tight">۱,۷۴۷ $</span>
                   </div>
                   <button className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-3 mt-4">
-                    <span>تکمیل و پرداخت نهایی</span>
+                    <span>{t('checkout')}</span>
                     <span className="material-icons">chevron_left</span>
                   </button>
                   <p className="text-center text-xs text-slate-400 mt-4 leading-relaxed">
-                    قیمت نهایی بر اساس نرخ روز ارز محاسبه خواهد شد. در صورت نیاز به پیش‌فاکتور رسمی با پشتیبانی تماس بگیرید.
+                    {t('priceNote')}
                   </p>
                 </div>
               </div>
@@ -136,8 +139,8 @@ const CartPage = () => {
                     <span className="material-icons">verified_user</span>
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold">ضمانت اصالت کالا</h4>
-                    <p className="text-[11px] text-slate-500">تمامی محصولات ۱۰۰٪ اصلی هستند</p>
+                    <h4 className="text-sm font-bold">{t('authenticityGuarantee')}</h4>
+                    <p className="text-[11px] text-slate-500">{t('authenticityDesc')}</p>
                   </div>
                 </div>
                 <div className="bg-white/50 dark:bg-slate-900/50 p-4 rounded-xl flex items-center gap-4 border border-slate-100 dark:border-slate-800">
@@ -145,8 +148,8 @@ const CartPage = () => {
                     <span className="material-icons">local_shipping</span>
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold">ارسال مطمئن</h4>
-                    <p className="text-[11px] text-slate-500">ارسال به تمام ولایات افغانستان</p>
+                    <h4 className="text-sm font-bold">{t('fastDelivery')}</h4>
+                    <p className="text-[11px] text-slate-500">{t('fastDeliveryDesc')}</p>
                   </div>
                 </div>
               </div>

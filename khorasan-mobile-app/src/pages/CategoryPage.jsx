@@ -2,9 +2,11 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useLanguage } from '../context/LanguageContext';
 
 const CategoryPage = () => {
   const { name } = useParams();
+  const { t } = useLanguage();
 
   const products = [
     { id: 1, name: 'آیفون ۱۵ پرو ظرفیت ۲۵۶ گیگابایت', brand: 'Apple', price: '۸۹,۵۰۰ AFN', oldPrice: '۹۵,۰۰۰ AFN', badge: 'جدید', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA3pTrMziFxvn9dlHYH1fd7X2RD6wE9HoDVfVkY7UeS2bo2Ptw7fF4otl-hoH1es7CjaMEMvRWyNTXbOntWMKWI1VCb96vg9wU1xyRB1XxLQlYabzrJDtnJvmwaD9EdiE8oXpk-3o_ClnuY_iisLSAg-DlaX1goszstGEtO45ns6HiHno3LDUDryMP_FFkjNTaTxnm5CPMl4wcMgR4kB_08iTi16RngMQ8dgNcNxE32EGl_z4WEmfNAsoX_GNEik02Z2wqpjzVkUDw' },
@@ -23,15 +25,15 @@ const CategoryPage = () => {
           <div className="container mx-auto px-4">
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
-                <Link to="/" className="hover:text-primary transition-colors">صفحه اصلی</Link>
+                <Link to="/" className="hover:text-primary transition-colors">{t('home')}</Link>
                 <span className="material-icons text-[10px]">chevron_left</span>
-                <a href="#" className="hover:text-primary transition-colors">کالای دیجیتال</a>
+                <a href="#" className="hover:text-primary transition-colors">{t('allProducts')}</a>
                 <span className="material-icons text-[10px]">chevron_left</span>
-                <span className="text-primary font-semibold">گوشی‌های موبایل</span>
+                <span className="text-primary font-semibold">{t('smartphones')}</span>
               </div>
-              <h1 className="text-3xl font-bold text-slate-900 dark:text-white">گوشی‌های هوشمند</h1>
+              <h1 className="text-3xl font-bold text-slate-900 dark:text-white">{t('smartphones')}</h1>
               <p className="text-slate-500 max-w-2xl mt-2">
-                جدیدترین و پیشرفته‌ترین گوشی‌های موبایل از برندهای معتبر جهانی با گارانتی معتبر خراسان موبایل.
+                {t('categoryDesc')}
               </p>
             </div>
           </div>
@@ -42,7 +44,7 @@ const CategoryPage = () => {
             {/* Sidebar Filters */}
             <aside className="w-full lg:w-1/4 flex flex-col gap-6">
               <div className="bg-white dark:bg-white/5 p-6 rounded-xl border border-primary/5">
-                <h3 className="font-bold text-lg mb-4 border-r-4 border-primary pr-3">برندها</h3>
+                <h3 className="font-bold text-lg mb-4 border-r-4 border-primary pr-3">{t('brands')}</h3>
                 <div className="space-y-3">
                   {['اپل (Apple)', 'سامسونگ (Samsung)', 'شیائومی (Xiaomi)', 'هوآوی (Huawei)'].map((brand) => (
                     <label key={brand} className="flex items-center gap-3 cursor-pointer group">
@@ -54,7 +56,7 @@ const CategoryPage = () => {
               </div>
 
               <div className="bg-white dark:bg-white/5 p-6 rounded-xl border border-primary/5">
-                <h3 className="font-bold text-lg mb-4 border-r-4 border-primary pr-3">حافظه رم (RAM)</h3>
+                <h3 className="font-bold text-lg mb-4 border-r-4 border-primary pr-3">{t('ram')}</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {['۴ گیگابایت', '۸ گیگابایت', '۱۲ گیگابایت', '۱۶ گیگابایت'].map((ram) => (
                     <button key={ram} className="py-2 text-sm border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary hover:text-primary transition-all">
@@ -72,18 +74,23 @@ const CategoryPage = () => {
                 <div className="flex items-center gap-4">
                   <span className="text-sm font-semibold flex items-center gap-1">
                     <span className="material-icons text-primary">sort</span>
-                    مرتب‌سازی:
+                    {t('sortBy')}
                   </span>
                   <div className="flex gap-2">
-                    {['جدیدترین', 'پرفروش‌ترین', 'ارزان‌ترین', 'گران‌ترین'].map((sort, idx) => (
-                      <button key={sort} className={`text-sm px-4 py-1.5 rounded-full ${idx === 0 ? 'bg-primary text-white' : 'hover:bg-primary/10'} transition-colors`}>
-                        {sort}
+                    {[
+                      { key: 'newest', label: t('newest') },
+                      { key: 'bestseller', label: t('bestseller') },
+                      { key: 'cheapest', label: t('cheapest') },
+                      { key: 'expensive', label: t('expensive') }
+                    ].map((sort, idx) => (
+                      <button key={sort.key} className={`text-sm px-4 py-1.5 rounded-full ${idx === 0 ? 'bg-primary text-white' : 'hover:bg-primary/10'} transition-colors`}>
+                        {sort.label}
                       </button>
                     ))}
                   </div>
                 </div>
                 <div className="text-sm text-slate-500">
-                  نمایش <span className="font-bold text-slate-800 dark:text-slate-200">۲۴</span> محصول
+                  {t('showing')} <span className="font-bold text-slate-800 dark:text-slate-200">۲۴</span> {t('items')}
                 </div>
               </div>
 
@@ -107,7 +114,7 @@ const CategoryPage = () => {
                         className="absolute bottom-4 inset-x-4 bg-primary text-white py-2 rounded-lg translate-y-12 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-2"
                       >
                         <span className="material-icons text-sm">shopping_cart</span>
-                        افزودن به سبد
+                        {t('addToCart')}
                       </Link>
                     </div>
                     <div className="p-4">

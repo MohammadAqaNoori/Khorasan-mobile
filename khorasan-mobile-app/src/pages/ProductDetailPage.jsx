@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useLanguage } from '../context/LanguageContext';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [selectedImage, setSelectedImage] = useState(0);
+  const { t } = useLanguage();
 
   const product = {
     name: 'آیفون ۱۵ پرو مکس - ۲۵۶ گیگابایت',
@@ -28,9 +30,9 @@ const ProductDetailPage = () => {
       
       <main className="container mx-auto px-4 py-8">
         <nav className="flex mb-8 text-sm text-slate-500 gap-2">
-          <a href="/" className="hover:text-primary">فروشگاه</a>
+          <a href="/" className="hover:text-primary">{t('home')}</a>
           <span className="material-icons text-xs self-center">chevron_left</span>
-          <a href="/category/mobile" className="hover:text-primary">گوشی هوشمند</a>
+          <a href="/category/mobile" className="hover:text-primary">{t('smartphones')}</a>
           <span className="material-icons text-xs self-center">chevron_left</span>
           <span className="text-slate-800 dark:text-slate-200 font-medium">آیفون ۱۵ پرو مکس</span>
         </nav>
@@ -62,7 +64,7 @@ const ProductDetailPage = () => {
           <div className="lg:col-span-5 flex flex-col">
             <div className="mb-2">
               <span className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                جدیدترین مدل
+                {t('latestModel')}
               </span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
@@ -72,7 +74,7 @@ const ProductDetailPage = () => {
               <div className="text-3xl font-bold text-primary">{product.price}</div>
               <div className="flex items-center bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 rounded-lg text-sm">
                 <span className="material-icons text-sm mr-1">check_circle</span>
-                <span>موجود در انبار</span>
+                <span>{t('inStock')}</span>
               </div>
             </div>
             <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
@@ -96,11 +98,11 @@ const ProductDetailPage = () => {
             <div className="flex flex-col gap-4 mt-auto">
               <button className="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-opacity-90 shadow-lg shadow-primary/20 transition-all">
                 <span className="material-icons">add_shopping_cart</span>
-                افزودن به سبد خرید
+                {t('addToCart')}
               </button>
               <button className="w-full bg-green-500 text-white py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:opacity-90 shadow-lg transition-all">
                 <span className="material-icons">chat</span>
-                سفارش از طریق واتس‌اپ
+                {t('orderWhatsapp')}
               </button>
             </div>
 
@@ -110,19 +112,19 @@ const ProductDetailPage = () => {
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                   <span className="material-icons">verified</span>
                 </div>
-                <span className="text-xs font-medium text-slate-500">کالای اورجینال</span>
+                <span className="text-xs font-medium text-slate-500">{t('originalProduct')}</span>
               </div>
               <div className="flex flex-col items-center text-center gap-2">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                   <span className="material-icons">security</span>
                 </div>
-                <span className="text-xs font-medium text-slate-500">گارانتی معتبر</span>
+                <span className="text-xs font-medium text-slate-500">{t('validWarranty')}</span>
               </div>
               <div className="flex flex-col items-center text-center gap-2">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                   <span className="material-icons">local_shipping</span>
                 </div>
-                <span className="text-xs font-medium text-slate-500">تحویل سریع کابل</span>
+                <span className="text-xs font-medium text-slate-500">{t('fastDeliveryKabul')}</span>
               </div>
             </div>
           </div>
