@@ -129,6 +129,76 @@ const ProductDetailPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Detailed Tabs Section */}
+        <section className="mt-20">
+          <div className="border-b border-slate-200 dark:border-slate-700 flex gap-12 mb-8 overflow-x-auto">
+            <button className="pb-4 border-b-2 border-primary text-primary font-bold whitespace-nowrap">{t('productDescription')}</button>
+            <button className="pb-4 border-b-2 border-transparent text-slate-400 hover:text-slate-600 font-medium whitespace-nowrap">{t('technicalSpecs')}</button>
+            <button className="pb-4 border-b-2 border-transparent text-slate-400 hover:text-slate-600 font-medium whitespace-nowrap flex items-center gap-2">
+              {t('userReviews')}
+              <span className="bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-xs">۱۲</span>
+            </button>
+          </div>
+          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-primary/5 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold">{t('titaniumDesign')}</h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  {t('titaniumDesc')}
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span className="text-sm">{t('contouredEdges')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span className="text-sm">{t('thinnestBorders')}</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    <span className="text-sm">{t('actionButton')}</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-2xl">
+                <img 
+                  className="w-full h-auto" 
+                  alt="Titanium design details"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDfhygUA15nAS5vo5krFaM9XxvoUBboPEoq-aZHgcQ-6Hoqn_dTdeqts8L6EyxDB_n0OcFP8TFFOJGnb-TkuOAU-3RbXediiJjqGjT4h8ENqbdbJHni8t31Wial87oZyvOsyJAgwd7cEAAjpi1fcGnlET-4abn-tYxvjZEI6xasxPeSM4NNDlWWkf2MR1Dna9pOq1t0TGtIHbqDlfegMZRpuPiG05fle6eGIMd-MlCOPWTWwqsvb7t4uTA9SetPdf330_hrusMzSA"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Products */}
+        <section className="mt-20 mb-12">
+          <div className="flex items-center justify-between mb-8">
+            <h3 className="text-2xl font-bold">{t('suggestedProducts')}</h3>
+            <a className="text-primary font-medium flex items-center hover:gap-1 transition-all" href="#">
+              {t('viewAllProducts')}
+              <span className="material-icons">chevron_left</span>
+            </a>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { name: 'اپل واچ سری ۹', price: '۲۴,۵۰۰ افغانی', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDW7PHeS-PMNte_ZZO5ZvPUE3NsWt9fxHmsE0M89PcfyjE89SVehvDMQyuCZWRfFGNS3Oa-_ohxaoFE8A3SkQ4Pcd2ahEXD2bAEDFje5E0IcWgc7QkNJKx_KP45xMkkvWtigo_0k_lNikZJAy3K7DP4ugq3N2ocdkOn_0pHbxn4v7CwMcaSlzR1LHIgwFwcaoK1KbV492Dl76HL-oqm__br68nSK0mR1gpSEl-0Xg_cX4Od_meLZoF-Pw-8EFhPTN9GGIXRvFgB1ig' },
+              { name: 'ایرباد پرو نسل ۲', price: '۱۴,۲۰۰ افغانی', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB9Lf5Sy9ThMqaLod-tgyzFwJGueMr1_HVmX53T_HupAJ-v8_72MiWGe6C9_ZP2kBWCO55ttrBNr5izk7bD15uWLaw8aGnzp8U8SBZGxF8HTBXRwyz7ZzfzanpgS2QX5kbCszBMUUQxRyaApWpI6LewB_caj-XDFxUE7w9qGvFR9Fu5GtcOf2le5ZMxi-Ts_k8KB4tt9zEZf2_SUZEue5vhmUYspXjmUfuS9EZ9mhujpsnJa53aWqCj4LTEV6ap7wnPdYnpDLquo_8' },
+              { name: 'کاور چرمی آیفون ۱۵', price: '۳,۸۰۰ افغانی', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD5M4Ju0qA3pD7FY4aH6_GBUyBMEHQfphfCydG-P-2YW6_EtMPSg75H_qUYS0D50Ak8FqpB0wWdt6hH_6Jp6dYFroAEGPRIaaAF1cpvm_czK_z_eD_NY8Q3q5DVv9kP0o5KHpHVntBC-Sdco24N3yOEJw6v8OXTqggyTgAsDMyNjYCsOhtPMYIssTp95AfB3-W-0Iz_1eEob-fO_o2RmkBVPl0Z2whRUIWz4G0alFxTvb9Qw6TQ-PUgEFlgQNi0NmTAatAZr6tprkU' },
+              { name: 'شارژر ۲۰ وات اپل', price: '۱,۹۰۰ افغانی', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDT01Rc4RFG4b6n6PCxPzJSb8D4J686Ki527hk-DM4drm5yDEOmd3jFSTKe6p6_WI0K7qrEdIAWUoVf0DJIVuyyMzSBY_E35NY-pySwsvyvLftk8tFvr9qSNcHrB3WYUyrTimL_-TfP5Hw6jSozdh5cFG1CtWnMSLIZmOjN9dxx5qjTMbKs4E-5xo0UooAYH79jlMQdKEF4rClPNXJSe22XzvM8xSG2JUCIS1ZyjpIL_rDl1eD4ERX9UxPKN3UfPvHCziOSawnaxvo' }
+            ].map((product, idx) => (
+              <div key={idx} className="group bg-white dark:bg-slate-900 p-4 rounded-xl border border-primary/5 hover:border-primary/20 transition-all">
+                <div className="aspect-square mb-4 bg-background-light dark:bg-slate-800 rounded-lg p-4 overflow-hidden">
+                  <img className="w-full h-full object-contain group-hover:scale-110 transition-transform" alt={product.name} src={product.image} />
+                </div>
+                <h4 className="font-bold text-sm mb-2 group-hover:text-primary transition-colors">{product.name}</h4>
+                <div className="text-primary font-bold">{product.price}</div>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
 
       <Footer />
