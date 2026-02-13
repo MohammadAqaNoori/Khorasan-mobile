@@ -1,28 +1,21 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useLanguage } from '../context/LanguageContext';
+import { products } from '../data/products';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [selectedImage, setSelectedImage] = useState(0);
   const { t } = useLanguage();
 
-  const product = {
-    name: 'آیفون ۱۵ پرو مکس - ۲۵۶ گیگابایت',
-    price: '۸۵,۰۰۰ افغانی',
-    images: [
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAPxiQ4h9iCJSOEXOXvj5ubjGPCqZxpn4-RqmvmfxHetjrdC0dqfWyyIrVKTDoPzG1bNXv8_UuBbwd-6UejOFtLEaU5cIve7P5TxVuAFvyLlHQ8oi6A5y2FTh0CS1suhjmf2Ojd_Sc7wZTyEMlynNvk37FrG2sUQWF0WHdHYPdZrHuwvyE_NdAfOW7jhNbLa0gzsGyzWburnC-Qk8Wrzgov7ilxzScPz7S-NiR6EWPo2ugy17G8MWDeULrc1WeCxPIhbZpvnK3ZkK4',
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBBl6C29B5lgQCSC7fCF1ul8YRl-oKiZUv203InMu_0QY7U5oUMaCQTn9rrHXUkK3I_sI6r6S5tpgYqk1OiP4c6d6Gy-ce1T6AuF92ZKw6MqV0HAujv5AynuFQ-x4kuJtK3vKYYGIEx98jygIs4uz8oULOyeYpit8sDWxrVL56qcFxe3OPGfa0AZ4yOLOgJgKNMWHvRvHDypScGtefYBGirpibiSlRNH17rSz0w_by5h7OnFD8hVLuNseae0nBN28FUdtVnNX30azA'
-    ],
-    specs: [
-      { icon: 'memory', label: 'تراشه', value: 'A17 Pro' },
-      { icon: 'camera', label: 'دوربین', value: '۴۸ مگاپیکسل' },
-      { icon: 'storage', label: 'حافظه', value: '۲۵۶ گیگابایت' },
-      { icon: 'smartphone', label: 'صفحه نمایش', value: '۶.۷ اینچ OLED' }
-    ]
-  };
+  const product = products[id];
+
+  // If product not found, redirect to home
+  if (!product) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
@@ -78,7 +71,7 @@ const ProductDetailPage = () => {
               </div>
             </div>
             <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
-              تجربه قدرت و زیبایی با بدنه تیتانیومی و تراشه قدرتمند A17 Pro. این محصول با ضمانت نامه معتبر خراسان موبایل و تحویل فوری در کابل عرضه می‌شود.
+              {product.description}
             </p>
 
             {/* Technical Specs */}
