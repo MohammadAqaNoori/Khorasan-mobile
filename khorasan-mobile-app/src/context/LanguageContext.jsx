@@ -93,6 +93,13 @@ export const translations = {
     expensive: 'گران‌ترین',
     showing: 'نمایش',
     items: 'محصول',
+    outOfStock: 'ناموجود',
+    notifyMe: 'اطلاع به من',
+    findUsKabul: 'ما را در کابل پیدا کنید',
+    findUsDesc: 'فروشگاه فیزیکی خراسان موبایل واقع در چهارراهی صدارت، آماده خدمت‌رسانی به شما عزیزان می‌باشد. تجربه خریدی مطمئن و لمس محصولات از نزدیک.',
+    storeAddress: 'آدرس فروشگاه:',
+    storeAddressDetail: 'کابل، چهارراهی صدارت، مرکز تجاری افغان، طبقه اول',
+    phoneContact: 'شماره تماس:',
     
     // Cart Page
     shoppingCart: 'سبد خرید',
@@ -231,6 +238,13 @@ export const translations = {
     expensive: 'ګران',
     showing: 'ښودل',
     items: 'محصول',
+    outOfStock: 'ناموجود',
+    notifyMe: 'ما ته خبر راکړئ',
+    findUsKabul: 'موږ په کابل کې ومومئ',
+    findUsDesc: 'د خراسان موبایل فزیکي پلورنځی د صدارت په څلور لاره کې موقعیت لري، ستاسو د خدمت لپاره چمتو دی. د باوري پیرود تجربه او د نږدې څخه د محصولاتو لمس.',
+    storeAddress: 'د پلورنځي پته:',
+    storeAddressDetail: 'کابل، د صدارت څلور لاره، افغان سوداګریز مرکز، لومړۍ پوړ',
+    phoneContact: 'د تماس شمیره:',
     
     // Cart Page
     shoppingCart: 'د پیرود سبد',
