@@ -1,8 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useLanguage } from '../context/LanguageContext';
 
 const AboutPage = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
       <Header />
@@ -19,10 +22,10 @@ const AboutPage = () => {
                 پیشرو در تکنولوژی افغانستان
               </span>
               <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
-                اعتماد شما سرمایه ماست
+                {t('aboutHeroTitle')}
               </h1>
               <p className="text-lg text-white/90 leading-relaxed bg-white/10 rounded-xl p-4">
-                ما در خراسان موبایل، متعهد به ارائه برترین تکنولوژی‌های روز دنیا با تضمین اصالت و بهترین قیمت در بازار افغانستان هستیم.
+                {t('aboutHeroDesc')}
               </p>
             </div>
           </div>
@@ -33,7 +36,7 @@ const AboutPage = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
-                <h2 className="text-3xl font-bold text-primary mb-6">داستان خراسان موبایل</h2>
+                <h2 className="text-3xl font-bold text-primary mb-6">{t('ourStory')}</h2>
                 <div className="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
                   <p>
                     سفر ما از یک آرزوی ساده آغاز شد: فراهم آوردن دسترسی آسان و مطمئن به تکنولوژی‌های نوین برای هموطنان عزیز در افغانستان. در زمانی که بازار مملو از محصولات غیراصل بود، ما خراسان موبایل را با هدف برقراری معیار جدیدی از صداقت بنا کردیم.
@@ -65,7 +68,7 @@ const AboutPage = () => {
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <span className="material-icons text-primary text-3xl">rocket_launch</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">مأموریت ما</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('ourMission')}</h3>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                   مأموریت ما توانمندسازی جامعه افغانستان از طریق دسترسی به تکنولوژی‌های باکیفیت است. ما با حذف واسطه‌های غیرضروری و تمرکز بر زنجیره تأمین مستقیم، قیمت‌های عادلانه را تضمین می‌کنیم.
                 </p>
@@ -74,7 +77,7 @@ const AboutPage = () => {
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                   <span className="material-icons text-primary text-3xl">visibility</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">چشم‌انداز ما</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('ourVision')}</h3>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                   تبدیل شدن به بزرگترین و قابل‌اعتمادترین مرجع خرید کالای دیجیتال در منطقه، جایی که هر مشتری با خیالی آسوده از بابت اصالت و خدمات پس از فروش، خرید خود را انجام می‌دهد.
                 </p>
@@ -87,7 +90,7 @@ const AboutPage = () => {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">ارزش‌های بنیادین ما</h2>
+              <h2 className="text-3xl font-bold mb-4">{t('coreValues')}</h2>
               <div className="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -95,7 +98,7 @@ const AboutPage = () => {
                 <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                   <span className="material-icons text-3xl">verified</span>
                 </div>
-                <h4 className="text-xl font-bold mb-3">اصالت کالا</h4>
+                <h4 className="text-xl font-bold mb-3">{t('authenticProduct')}</h4>
                 <p className="text-slate-500 text-sm leading-relaxed">
                   تمامی محصولات ما دارای تضمین ۱۰۰٪ اصالت و ریجستری رسمی می‌باشند. ما به شفافیت در کالا معتقدیم.
                 </p>
@@ -104,7 +107,7 @@ const AboutPage = () => {
                 <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                   <span className="material-icons text-3xl">support_agent</span>
                 </div>
-                <h4 className="text-xl font-bold mb-3">پشتیبانی ۲۴/۷</h4>
+                <h4 className="text-xl font-bold mb-3">{t('support247')}</h4>
                 <p className="text-slate-500 text-sm leading-relaxed">
                   تیم متخصص پشتیبانی ما در تمامی مراحل خرید و حتی پس از آن، در کنار شماست تا پاسخگوی سوالات باشد.
                 </p>
@@ -113,7 +116,7 @@ const AboutPage = () => {
                 <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                   <span className="material-icons text-3xl">local_shipping</span>
                 </div>
-                <h4 className="text-xl font-bold mb-3">ارسال سریع</h4>
+                <h4 className="text-xl font-bold mb-3">{t('fastShipping')}</h4>
                 <p className="text-slate-500 text-sm leading-relaxed">
                   ارسال به تمامی ولایات افغانستان در کوتاه‌ترین زمان ممکن و با بسته‌بندی ایمن و استاندارد انجام می‌شود.
                 </p>
