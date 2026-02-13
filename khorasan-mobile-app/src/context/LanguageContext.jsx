@@ -87,6 +87,12 @@ export const translations = {
     actionButton: 'دکمه اکشن قابل شخصی‌سازی جدید',
     suggestedProducts: 'محصولات پیشنهادی',
     viewAllProducts: 'مشاهده همه محصولات',
+    founderQuote: 'تکنولوژی نباید یک تجمل باشد، بلکه ابزاری است برای پیشرفت. ما اینجاییم تا این ابزار را با بالاترین کیفیت در اختیار مردم خود قرار دهیم.',
+    founderName: 'احمد خراسان',
+    founderTitle: 'بنیان‌گذار خراسان موبایل',
+    stayConnected: 'با ما در ارتباط باشید',
+    ourAddress: 'آدرس ما: کابل، شهر نو، جاده آسمایی، مجتمع تجاری خراسان، طبقه همکف',
+    getConsultation: 'دریافت نوبت مشاوره',
     
     // Category Page
     allProducts: 'کالای دیجیتال',
@@ -250,6 +256,12 @@ export const translations = {
     actionButton: 'نوی د شخصي کولو وړ عمل تڼۍ',
     suggestedProducts: 'وړاندیز شوي محصولات',
     viewAllProducts: 'ټول محصولات وګورئ',
+    founderQuote: 'ټکنالوژي باید یو تجمل نه وي، بلکې د پرمختګ لپاره یوه وسیله ده. موږ دلته یو چې دا وسیله د لوړ کیفیت سره خپلو خلکو ته وړاندې کړو.',
+    founderName: 'احمد خراسان',
+    founderTitle: 'د خراسان موبایل بنسټګر',
+    stayConnected: 'موږ سره اړیکه ولرئ',
+    ourAddress: 'زموږ پته: کابل، شهر نو، د آسمایي سړک، د خراسان سوداګریز مجتمع، ځمکنۍ پوړ',
+    getConsultation: 'د مشورې نوبت ترلاسه کړئ',
     
     // Category Page
     allProducts: 'ډیجیټل توکي',
