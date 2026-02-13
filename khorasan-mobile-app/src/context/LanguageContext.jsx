@@ -100,6 +100,14 @@ export const translations = {
     storeAddress: 'آدرس فروشگاه:',
     storeAddressDetail: 'کابل، چهارراهی صدارت، مرکز تجاری افغان، طبقه اول',
     phoneContact: 'شماره تماس:',
+    showroomVisit: 'به صورت حضوری مراجعه کنید',
+    showroomDesc: 'از جدیدترین محصولات تکنولوژی در محیطی مدرن دیدن کنید.',
+    showroomLabel: 'نمای فروشگاه',
+    mapLocation: 'مشاهده موقعیت روی نقشه کابل',
+    mapAddress: 'چهارراهی انصاری، شهرنو',
+    quickAnswers: 'دنبال جواب سریع هستید؟',
+    quickAnswersDesc: 'شاید سوال شما در بخش سوالات متداول قبلاً پاسخ داده شده باشد. قبل از تماس، نگاهی به آن بیندازید.',
+    viewFaq: 'مشاهده سوالات متداول',
     
     // Cart Page
     shoppingCart: 'سبد خرید',
@@ -245,6 +253,14 @@ export const translations = {
     storeAddress: 'د پلورنځي پته:',
     storeAddressDetail: 'کابل، د صدارت څلور لاره، افغان سوداګریز مرکز، لومړۍ پوړ',
     phoneContact: 'د تماس شمیره:',
+    showroomVisit: 'په مستقیم ډول راشئ',
+    showroomDesc: 'د ټکنالوژۍ تر ټولو نوي محصولات په عصري چاپیریال کې وګورئ.',
+    showroomLabel: 'د پلورنځي لید',
+    mapLocation: 'د کابل په نقشه کې موقعیت وګورئ',
+    mapAddress: 'د انصاري څلور لاره، شهرنو',
+    quickAnswers: 'د ګړندي ځواب په لټه کې یاست؟',
+    quickAnswersDesc: 'شاید ستاسو پوښتنه د عامو پوښتنو په برخه کې مخکې ځواب ورکړل شوی وي. د تماس مخکې یې وګورئ.',
+    viewFaq: 'عام پوښتنې وګورئ',
     
     // Cart Page
     shoppingCart: 'د پیرود سبد',

@@ -200,6 +200,57 @@ const ContactPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Map & Showroom Section */}
+        <section className="bg-white dark:bg-slate-800/20 py-16 border-t border-primary/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              {/* Google Map Placeholder */}
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/10 h-[400px] relative">
+                <div className="absolute inset-0 bg-slate-200 dark:bg-slate-800 animate-pulse flex items-center justify-center">
+                  <img 
+                    alt="Map location" 
+                    className="w-full h-full object-cover opacity-50 grayscale" 
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmoZLwzqLirYZCPb_bUzthpQNEJt38qgNjswprUxaI888o9LrnHEN777AXkyFd4FHQfI61loysOH_lrrRa7O1iytQb38cYUiReyoRqcQ8TbOPARUJT8OkJ33cMPWXneGq0XLkX-vCSCvDpktfRPqtIui6KHgaHRy6JUoTWUufLA5h0Gg_KGcwU3U6-3MwHXBsxfSE1EiugV8pjeFiVB_x1-pDfvoIjY_qjdn2DRxUyElDQvl8_asPXm995igB_AC55dm9lI7hGn1E"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 flex flex-col items-center justify-center text-center p-6">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-xl">
+                      <span className="material-icons text-primary text-3xl">location_on</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 bg-white/90 px-4 py-2 rounded-lg">{t('mapLocation')}</h3>
+                    <p className="mt-2 text-slate-800 font-medium">{t('mapAddress')}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Store Image */}
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/10 h-[400px] relative group">
+                <img 
+                  alt="Khorasan Mobile Showroom" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4qAQ0AGly-QgoCIUQ_liAbUYi1BZMmjBEs73nD9l31eNTC3xLIjZ5u4sZ1-3b27jdI7ZdYan6sFHXpejgPl3kAcJ6MfUee--zLlhekx74HZg0i_UYbHRCENNa3Tj8GewiJyqIkgCk6YWiW9FSnuN8asoMYuwGBdzyexk13bhe4XyWFX06gkA_e3uJk3UBUP_LH0LgtlwXaJdGdyepKQfvkSFqfU-uLwZH36Kl-WSWEFArFXg0FTye_1Ckv96IaZoYhnhkx-uP0ks"
+                />
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                  <span className="inline-block bg-primary text-white text-xs px-3 py-1 rounded-full mb-3">{t('showroomLabel')}</span>
+                  <h3 className="text-2xl font-bold text-white mb-2">{t('showroomVisit')}</h3>
+                  <p className="text-slate-200 text-sm">{t('showroomDesc')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Help / FAQ CTA */}
+        <section className="py-16 text-center">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold mb-4">{t('quickAnswers')}</h2>
+            <p className="text-slate-600 dark:text-slate-400 mb-8">{t('quickAnswersDesc')}</p>
+            <a className="inline-flex items-center gap-2 text-primary font-bold hover:underline" href="#">
+              {t('viewFaq')}
+              <span className="material-icons text-sm">arrow_back</span>
+            </a>
+          </div>
+        </section>
       </main>
 
       <Footer />
