@@ -1,0 +1,19 @@
+[build]
+  # Directory where the React app is located
+  base = "."
+  
+  # Build command
+  command = "npm run build"
+  
+  # Directory to publish (the build output)
+  publish = "build"
+
+# Redirect all requests to index.html for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Optional: Set environment variables
+[build.environment]
+  NODE_VERSION = "18"
