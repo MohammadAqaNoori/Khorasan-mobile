@@ -85,9 +85,9 @@ const Header = () => {
               <span className="material-icons">shopping_cart</span>
               <span className="absolute top-1 right-1 w-4 h-4 bg-primary text-white text-[10px] flex items-center justify-center rounded-full">۳</span>
             </Link>
-            <button className="p-2 hover:bg-primary/10 rounded-full transition-colors">
+            <Link to="/profile" className="p-2 hover:bg-primary/10 rounded-full transition-colors">
               <span className="material-icons">person</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
