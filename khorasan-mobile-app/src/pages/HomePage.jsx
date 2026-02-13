@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useLanguage } from '../context/LanguageContext';
 
 const HomePage = () => {
+  const { t } = useLanguage();
   const products = [
     {
       id: 1,
@@ -45,23 +47,23 @@ const HomePage = () => {
             <div className="grid md:grid-cols-2 items-center gap-12">
               <div className="order-2 md:order-1 flex flex-col items-start text-right">
                 <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-bold mb-6">
-                  تخفیف‌های ویژه فصل
+                  {t('seasonalDiscount')}
                 </span>
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                  جدیدترین موبایل‌ها با <br />
-                  <span className="text-primary text-5xl md:text-7xl">بهترین قیمت</span> <br />
-                  در افغانستان
+                  {t('heroTitle1')} <br />
+                  <span className="text-primary text-5xl md:text-7xl">{t('heroTitle2')}</span> <br />
+                  {t('heroTitle3')}
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-lg">
-                  خراسان موبایل، مرجع اصلی فروش تکنولوژی در کابل و سایر ولایات. با ضمانت اصالت کالا و تحویل سریع در محل شما.
+                  {t('heroDescription')}
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:shadow-lg hover:shadow-primary/30 transition-all">
-                    <span>اکنون خرید کنید</span>
+                    <span>{t('shopNow')}</span>
                     <span className="material-icons rotate-180">arrow_right_alt</span>
                   </button>
                   <Link to="/category/mobile" className="border-2 border-primary/20 text-primary px-8 py-4 rounded-xl font-bold hover:bg-primary/5 transition-all">
-                    محصولات جدید
+                    {t('newProducts')}
                   </Link>
                 </div>
               </div>
@@ -90,8 +92,8 @@ const HomePage = () => {
                   <span className="material-icons">verified</span>
                 </div>
                 <div>
-                  <h4 className="font-bold">ضمانت اصالت کالا</h4>
-                  <p className="text-sm text-white/70">تضمین ۱۰۰٪ اصلی بودن تمامی محصولات</p>
+                  <h4 className="font-bold">{t('authenticityGuarantee')}</h4>
+                  <p className="text-sm text-white/70">{t('authenticityDesc')}</p>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-4 text-white border-x border-white/10">
@@ -99,8 +101,8 @@ const HomePage = () => {
                   <span className="material-icons">local_shipping</span>
                 </div>
                 <div>
-                  <h4 className="font-bold">تحویل سریع و مطمئن</h4>
-                  <p className="text-sm text-white/70">ارسال در کابل و تمام ولایات افغانستان</p>
+                  <h4 className="font-bold">{t('fastDelivery')}</h4>
+                  <p className="text-sm text-white/70">{t('fastDeliveryDesc')}</p>
                 </div>
               </div>
               <div className="flex items-center justify-center gap-4 text-white">
@@ -108,8 +110,8 @@ const HomePage = () => {
                   <span className="material-icons">support_agent</span>
                 </div>
                 <div>
-                  <h4 className="font-bold">پشتیبانی محلی</h4>
-                  <p className="text-sm text-white/70">پاسخگویی سریع به زبان‌های دری و پښتو</p>
+                  <h4 className="font-bold">{t('localSupport')}</h4>
+                  <p className="text-sm text-white/70">{t('localSupportDesc')}</p>
                 </div>
               </div>
             </div>
@@ -120,7 +122,7 @@ const HomePage = () => {
         <section className="py-20 container mx-auto px-4">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold mb-2">دسته‌بندی محصولات</h2>
+              <h2 className="text-3xl font-bold mb-2">{t('categoriesTitle')}</h2>
               <div className="h-1 w-20 bg-primary rounded-full"></div>
             </div>
           </div>
@@ -130,8 +132,8 @@ const HomePage = () => {
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                   <span className="material-icons text-4xl text-primary group-hover:text-white">smartphone</span>
                 </div>
-                <h3 className="text-xl font-bold mb-2">گوشی موبایل</h3>
-                <p className="text-slate-500 text-sm">بروزترین برندهای جهانی</p>
+                <h3 className="text-xl font-bold mb-2">{t('mobilePhones')}</h3>
+                <p className="text-slate-500 text-sm">{t('mobileDesc')}</p>
               </div>
             </Link>
 
@@ -140,8 +142,8 @@ const HomePage = () => {
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                   <span className="material-icons text-4xl text-primary group-hover:text-white">laptop</span>
                 </div>
-                <h3 className="text-xl font-bold mb-2">لپ‌تاپ</h3>
-                <p className="text-slate-500 text-sm">خانگی، گیمینگ و اداری</p>
+                <h3 className="text-xl font-bold mb-2">{t('laptops')}</h3>
+                <p className="text-slate-500 text-sm">{t('laptopsDesc')}</p>
               </div>
             </Link>
 
@@ -150,8 +152,8 @@ const HomePage = () => {
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                   <span className="material-icons text-4xl text-primary group-hover:text-white">headphones</span>
                 </div>
-                <h3 className="text-xl font-bold mb-2">لوازم جانبی</h3>
-                <p className="text-slate-500 text-sm">شارژر، کابل و قاب گوشی</p>
+                <h3 className="text-xl font-bold mb-2">{t('accessories')}</h3>
+                <p className="text-slate-500 text-sm">{t('accessoriesDesc')}</p>
               </div>
             </Link>
 
@@ -160,8 +162,8 @@ const HomePage = () => {
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
                   <span className="material-icons text-4xl text-primary group-hover:text-white">watch</span>
                 </div>
-                <h3 className="text-xl font-bold mb-2">گجت‌های هوشمند</h3>
-                <p className="text-slate-500 text-sm">ساعت و دستبندهای هوشمند</p>
+                <h3 className="text-xl font-bold mb-2">{t('smartGadgets')}</h3>
+                <p className="text-slate-500 text-sm">{t('smartGadgetsDesc')}</p>
               </div>
             </Link>
           </div>
@@ -172,11 +174,11 @@ const HomePage = () => {
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-end mb-12">
               <div>
-                <h2 className="text-3xl font-bold mb-2">محصولات برگزیده</h2>
+                <h2 className="text-3xl font-bold mb-2">{t('featuredProducts')}</h2>
                 <div className="h-1 w-20 bg-primary rounded-full"></div>
               </div>
               <Link to="/category/all" className="text-primary font-bold flex items-center gap-1 hover:underline">
-                مشاهده همه
+                {t('viewAll')}
                 <span className="material-icons text-sm rotate-180">arrow_forward</span>
               </Link>
             </div>
@@ -209,7 +211,7 @@ const HomePage = () => {
                         className="w-full bg-primary/5 hover:bg-primary hover:text-white text-primary font-bold py-3 rounded-lg transition-all border border-primary/10 flex items-center justify-center gap-2"
                       >
                         <span className="material-icons text-sm">visibility</span>
-                        مشاهده جزئیات
+                        {t('viewDetails')}
                       </Link>
                     </div>
                   </div>
@@ -225,18 +227,18 @@ const HomePage = () => {
             <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent"></div>
             <div className="relative z-10 p-10 md:p-20 grid md:grid-cols-2 gap-10 items-center">
               <div className="text-white text-right">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">از جدیدترین تخفیف‌ها مطلع شوید</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('newsletterTitle')}</h2>
                 <p className="text-white/80 text-lg mb-8">
-                  شماره تماس یا ایمیل خود را ثبت کنید تا از جدیدترین گوشی‌ها و آفرهای ویژه باخبر شوید.
+                  {t('newsletterDesc')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 max-w-lg">
                   <input
                     className="flex-1 rounded-xl bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:ring-white/30 text-right px-6 py-4"
-                    placeholder="ایمیل یا شماره موبایل"
+                    placeholder={t('emailPlaceholder')}
                     type="text"
                   />
                   <button className="bg-white text-primary font-bold px-8 py-4 rounded-xl hover:bg-slate-100 transition-colors">
-                    عضویت
+                    {t('subscribe')}
                   </button>
                 </div>
               </div>
