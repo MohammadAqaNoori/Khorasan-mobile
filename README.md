@@ -198,7 +198,7 @@ This project is created as a demo for Algoryum startup company.
 
 ## 👥 About Algoryum
 
-Algoryum is a startup company specializing in creating modern web and mobile applications for businesses in Afghanistan. This project serves as a demonstration of our capabilities in building e-commerce platforms.
+Algoryum is a startup company specializing in creating modern websites,  mobile applications, AI chatbots, and whatsApp aoutomations for businesses. This project serves as a demonstration of our capabilities in building e-commerce platforms.
 
 ## 📞 Contact
 
