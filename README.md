@@ -125,7 +125,9 @@ khorasan-mobile-app/
 
 - **Mobile**: < 640px
 - **Tablet**: 640px - 1024px
-- **Desktop**: > 1024px
+- **Desktop**: > 1024p
+## Live:
+wiew it here : https://khorasanmobile.netlify.app/
 
 ## 🚀 Deployment
 
